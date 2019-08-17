@@ -1,0 +1,7 @@
+<%= form_with(model: @visitor) do |form| %>
+<%= select_tag("",options_for_select(@guests)) %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

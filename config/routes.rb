@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'guests#update'
+  resources :visitors
+  devise_for :users
+  root 'static_pages#new'
+  
+
   # resourses :user  ///will access the crud file for users
 
 
