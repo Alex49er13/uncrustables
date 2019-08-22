@@ -9,4 +9,3 @@ class CreateGuests < ActiveRecord::Migration[5.2]
     end
   end
 end
-# how to utilize boolean. i.e it needs a column for deleted guests to use 

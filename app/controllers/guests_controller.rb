@@ -5,6 +5,9 @@ class GuestsController < ApplicationController
     end
 
     def create
+        
+     
+        
 #  new form filled out and what to do with it (saving)
     end
 
@@ -13,6 +16,7 @@ class GuestsController < ApplicationController
     end
 
     def new
+        @guest = Guest.new
 #  blank forn
     end 
 
@@ -21,13 +25,20 @@ class GuestsController < ApplicationController
     end
 
     def show
-        
+     @guest = Guest.new   
 #  is showing single record
     end
 
     def index
+        @guest = Guest.all
     # show multiple
 
+    end
+
+    private
+
+    def guest_params
+        params.require(:first_name, :last_name)
     end
 
 end

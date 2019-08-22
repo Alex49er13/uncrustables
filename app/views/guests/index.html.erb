@@ -1,2 +1,4 @@
-<h1> hello </h1>
-
+<%@guests.each do |guest| %>
+<div class="booyah-box col-10 offset-1">
+    <h1><%= link to guest.company, company_path %></h1></br>
+    <i><%= guest.first_name %></i>

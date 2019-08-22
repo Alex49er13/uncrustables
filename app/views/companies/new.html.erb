@@ -1,0 +1,12 @@
+<h1> company new</h1>
+<div class="booyah-box col-10 offset-1">
+  <h1>Enter Your company Details</h1>
+  <%= simple_form_for @company, url: companies_path do |f| %>
+    <%= f.input :name %>
+  
+    
+    
+    <br />
+    <%= f.submit 'Create', class: 'btn btn-primary' %>
+  <% end %>
+</div>

@@ -10,16 +10,19 @@ class VisitorsController < ApplicationController
   # GET /visitors/1
   # GET /visitors/1.json
   def show
+    @visitor =Visitor.find(params[:id])
   end
 
   # GET /visitors/new
   def new
     @visitor = Visitor.new
-    @guests = Guest.all.pluck(:first_name, :id)
+    # @guests = Guest.all.pluck(:first_name, :id)
+    #@guests = Guest :company_id.pluck(:first_name, :last_name)
   end
 
   # GET /visitors/1/edit
   def edit
+    @vistor = Visitor.find(params[:id])
   end
 
   # POST /visitors

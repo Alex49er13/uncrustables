@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :visitors, :users, :guests
+  resources :visitors, :users, :guests, :companies
   root 'static_pages#new'
   
 
