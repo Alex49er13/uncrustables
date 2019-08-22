@@ -21,6 +21,7 @@ class GuestsController < ApplicationController
     end
 
     def show
+        
 #  is showing single record
     end
 
