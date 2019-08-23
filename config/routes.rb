@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :visitors, :users, :guests, :companies
   root 'static_pages#new'
+  resources :visitors
   
+  resources :companies, only: [:new, :create, :show, :index] do
+    resources :guests, only: [:new, :create]
+  end
 
   # resourses :user  ///will access the crud file for users
 

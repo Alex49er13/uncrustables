@@ -12,6 +12,9 @@ class CompaniesController < ApplicationController
     #    end
     end
 
+    def index
+        @companies = Company.all
+    end
     def show
         @company = Company.find(params[:id])
     end
@@ -21,6 +24,11 @@ class CompaniesController < ApplicationController
 
     def company_params
         params.require(:company).permit(:name)
+    end
+
+    helper_method :current_company
+    def current_company
+        @current_company ||= Company.find(params[:company_id])
     end
 end
 
