@@ -2,6 +2,6 @@
 <br />
  <% @companies.each do |course| %>
     <h2 class="text-center">
-     
+      <%= link_to company.name, company_path(company) %>
     </h2>
     <% end %>
