@@ -1,7 +1,7 @@
 <h1> company index </h1>
 <br />
- <% @companies.each do |course| %>
+ <% @companies.each do |company| %>
     <h2 class="text-center">
-      <%= link_to company.name, company_path(company) %>
+      <%=link_to company.name, company_path(company) %>
     </h2>
     <% end %>
