@@ -16,8 +16,8 @@ class VisitorsController < ApplicationController
   # GET /visitors/new
   def new
     @visitor = Visitor.new
-    # @guests = Guest.all.pluck(:first_name, :id)
-    #@guests = Guest :company_id.pluck(:first_name, :last_name)
+    @guests = Guest.all.pluck(:first_name, :id)
+    @guests = Guest :company_id.pluck(:first_name, :last_name)
   end
 
   # GET /visitors/1/edit

@@ -5,15 +5,20 @@ class CompaniesController < ApplicationController
     end
 
     def create
+    
+        
         @company = Company.create(company_params) 
     #    if @company.valid?
             redirect_to company_path(@company)
+            
     #     else render :new, status: :uprocessable_entity
     #    end
     end
 
     def index
         @companies = Company.all
+        
+
     end
     def show
         @company = Company.find(params[:id])

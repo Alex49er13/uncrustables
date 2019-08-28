@@ -1,6 +1,7 @@
 class GuestsController < ApplicationController
 before_action :authenticate_user!
 
+
     def edit
 # show with edit ablities such as change first name
     end
@@ -28,12 +29,15 @@ before_action :authenticate_user!
     end
 
     def show
-     @guest = Guest.new   
+     @guest = Guest.find(params[:id])
+
+
 #  is showing single record
     end
 
     def index
         @guest = Guest.all
+
     # show multiple
 
     end
@@ -48,5 +52,4 @@ before_action :authenticate_user!
     def current_company
         @current_company ||= Company.find(params[:company_id])
     end
-
 end
