@@ -15,9 +15,10 @@ class VisitorsController < ApplicationController
 
   # GET /visitors/new
   def new
+
     @visitor = Visitor.new
-    @guests = Guest.all.pluck(:first_name, :id)
-    @guests = Guest :company_id.pluck(:first_name, :last_name)
+    @guests = Guest.all.pluck(:first_name, :id, :company_id).map{|c|[c[0],c[1],{class: c[2]}]}
+    @companies =  Company.all.pluck(:name, :id)
   end
 
   # GET /visitors/1/edit
@@ -28,7 +29,7 @@ class VisitorsController < ApplicationController
   # POST /visitors
   # POST /visitors.json
   def create
-    @visitor = Visitor.new(visitor_params)
+   @visitor = Visitor.new(visitor_params)
 
     respond_to do |format|
       if @visitor.save
