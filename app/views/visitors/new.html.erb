@@ -5,15 +5,20 @@
 <%= link_to 'Back', visitors_path %>
 
 
-
+ 
+ <%
+=begin%>
  <%= select_tag(:company_id, options_for_select(@companies),class:"company_select", include_blank:true) %> 
 <%= select_tag(:guest_id, options_for_select(@guests), include_blank:true) %>
 <script>
  $('#guest_id option').attr("disabled","disabled")
 $('.company_select').change(function(){
-    debugger
+    
     $('#guest_id option').attr("disabled","disabled")
     var company_id = $(this).val()
     $('.' + company_id).removeAttr("disabled")
 }) 
-</script>
+</script> 
+<%
+=end%>
+

@@ -1,0 +1,10 @@
+.card{
+    background-color: #e81111; /* RED */
+    border: none;
+    color: white;
+    padding: 55px 62px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+}

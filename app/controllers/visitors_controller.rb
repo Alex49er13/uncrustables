@@ -29,17 +29,17 @@ class VisitorsController < ApplicationController
   # POST /visitors
   # POST /visitors.json
   def create
-   @visitor = Visitor.new(visitor_params)
-
-    respond_to do |format|
-      if @visitor.save
-        format.html { redirect_to @visitor, notice: 'Visitor was successfully created.' }
-        format.json { render :show, status: :created, location: @visitor }
-      else
-        format.html { render :new }
-        format.json { render json: @visitor.errors, status: :unprocessable_entity }
-      end
-    end
+   @visitor = Visitor.create!(guest_id:visitor_params.to_h["guest_id"],clock_in:Time.now)
+   redirect_to root_path 
+   # respond_to do |format|
+    #   if @visitor.save
+    #     format.html { redirect_to @visitor, notice: 'Visitor was successfully created.' }
+    #     format.json { render :show, status: :created, location: @visitor }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @visitor.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /visitors/1
@@ -74,6 +74,6 @@ class VisitorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def visitor_params
-      params.fetch(:visitor, {})
+      params.permit!
     end
-end
+end 
