@@ -1,5 +1,4 @@
-
-<h1>Visitors History</h1>
+<h1>Visitors</h1>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -16,29 +15,24 @@
         <p>The .table-striped class adds zebra-stripes to a table:</p>            
       <table class="table table-striped">
       
-          <thead>
-            <tr>
-              <th>Guest Name</th>
-              <th>Company Name</th>
-              <th> Signed In</th>
-              <th>Signed Out</th>
-            </tr>
-          </thead> 
+        <thead>
+          <tr>
+            <th>clock_in</th>
+            <th>clock_out</th>
+            <th>guest_id</th>
+          </tr>
+        </thead> 
          
-        <% @visitors.each do |visitor| %>
-       
-           <tr> 
-              <td><%= Visitor.last.guest.first_name %></td>
-              <td><%= Visitor.last.guest.company.name %></td>
-              <td><%= visitor.clock_in %></td>
-              <td><%= visitor.clock_out %></td>
-        <% end %>
-           </tr>
+        <%  Visitor.where.not(clock_in:nil).map do |visitor| %>
+           <tr>
+             
+            <td><%= visitor.guest_id%></td>
+            
+            
+            </tr>
+             <% end %>
+          
       </table>
     </div>
  
     </tbody>
-
-  
-
-

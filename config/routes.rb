@@ -7,8 +7,11 @@ Rails.application.routes.draw do
     resources :guests
   end
     resources :users 
-    end
-
+  
+    
+    get "visitor/still_in_building" => "visitors#still_in_building"  
+    
+  end
   # resourses :user  ///will access the crud file for users
 
 
