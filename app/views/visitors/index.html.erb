@@ -28,8 +28,9 @@
         <% @visitors.each do |visitor| %>
        
            <tr> 
-              <td><%= Visitor.last.guest.first_name %></td>
-              <td><%= Visitor.last.guest.company.name %></td>
+              
+              <td><%= visitor.guest.first_name %></td>
+              <td><%= visitor.guest.company.name %></td>
               <td><%= visitor.clock_in %></td>
               <td><%= visitor.clock_out %></td>
         <% end %>

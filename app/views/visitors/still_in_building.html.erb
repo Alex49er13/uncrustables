@@ -16,16 +16,15 @@
       <table class="table table-striped">
       
         <thead>
-          <tr>
-            <th>clock_in</th>
-            <th>clock_out</th>
-            <th>guest_id</th>
-          </tr>
+            <th>clock in</th>
+            <th>clock out</th>
+            <th>guest id</th> 
         </thead> 
-         
-        <%  Visitor.where.not(clock_in:nil).map do |visitor| %>
+         <tbody>
+        <% @visitors.each do |visitor| %>
            <tr>
-             
+            <td><%= visitor.clock_in%></td>
+            <td><%= visitor.clock_out%></td>
             <td><%= visitor.guest_id%></td>
             
             

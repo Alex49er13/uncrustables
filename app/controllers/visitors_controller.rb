@@ -4,7 +4,7 @@ class VisitorsController < ApplicationController
   # GET /visitors
   # GET /visitors.json
   def still_in_building
-    @visitors = Visitor.all
+    @visitors = Visitor.distinct(:guest_id).where(clock_out:nil)
     @guests = Guest.all.pluck(:first_name, :id, :company_id).map{|c|[c[0],c[1],{class: c[2]}]}
     @companies =  Company.all.pluck(:name, :id)
    

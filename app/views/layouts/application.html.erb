@@ -6,19 +6,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%
-=begin%>
- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> 
-<%
-=end%>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> 
+
   </head>
 
   <body>
+  <div id="whole-body">
     <%= yield %>
-    <div class="wrapper">
-    
   </div>
-  <footer class="footer"></footer>
+  </body>
+  <footer class="footer">
   
     
     <% if user_signed_in? %>
@@ -26,5 +23,5 @@
      <% else %>
     <%= link_to 'J.M.Smuckers', new_user_session_path, class: 'nav_link' %>
       <% end %>
-  </body>
+  </footer>
 </html>

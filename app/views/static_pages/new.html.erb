@@ -1,63 +1,19 @@
-<div id="bg">
-  <div id="shapes">
-    <div id="shape"></div>
-    <div id="shape2"></div>
-    <div id="shape3"></div>
-    <div id="shape4"></div>
-  </div>
-</div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
- <div class="push_button red">
-    <%= link_to 'Sign In', new_visitor_path %> 
+ <div id="sign-in-btn" class="btn">
+    <%= link_to 'Sign In', new_visitor_path(selection: "sign_in") %> 
+  </div>
+<div id="bg-container">
+  <div id="bg">
+    <div id="shapes">
+      <div id="shape"></div>
+      <div id="shape2"></div>
+      <div id="shape3"></div>
+      <div id="shape4"></div>
+    </div>
   </div>
 </div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
- <div class="push_button blue">
+
+ <div id="sign-out-btn" class="btn">
     <%= link_to 'Sign Out', new_visitor_path %> 
   </div>
 </div> 

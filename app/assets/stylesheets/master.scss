@@ -1,15 +1,16 @@
-@import "bootstrap";
+
 .selector-for-some-widget {
     -webkit-box-sizing: content-box;
        -moz-box-sizing: content-box;
             box-sizing: content-box;
   }
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
+  // html, body {
+  //   height: 100%;
+  //   margin: 0;
+  // }
   .wrapper {
     min-height: 100%;
+    position: top;
   
     /* Equal to height of footer */
     /* But also accounting for potential margin-bottom of last child */
@@ -18,5 +19,6 @@
   .footer,
   .push {
     height: 50px;
+    position: top;
   }
   
